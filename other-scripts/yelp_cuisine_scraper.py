@@ -17,14 +17,14 @@ HEADERS = {"Authorization": f"Bearer {API_KEY}"}
 API_URL = "https://api.yelp.com/v3/businesses/search"
 
 
-def fetch_restaurants(cuisine, limit=200):
+def fetch_restaurants(cuisine, limit=100):
     restaurants = []
     offset = 0
 
     while len(restaurants) < limit:
         params = {
             "term": f"{cuisine} restaurants",
-            "location": "Manhattan, NY",
+            "location": "Queens, NY",
             "categories": "restaurants",
             "limit": 50,
             "offset": offset
